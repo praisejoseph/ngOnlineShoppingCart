@@ -1,0 +1,36 @@
+<h1>Welcome, {{userName}}</h1>
+<div>
+    <table class="table bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Product Name</th>
+                <th>Type of Product</th>
+                <th>Items in Store</th>
+                <th>Order?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>
+                    {{product.Id}}
+                </td>
+                <td>
+                    {{product.Name}}
+                </td>
+                <td>
+                    {{product.Type}}
+                </td>
+                <td>
+                    {{product.QuantityAvailable}}
+                </td>
+                <td>
+                    <button class="btn" (click)="buy()">Buy</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<hr>
+<button (click)="onLogout()" class="btn">Log out</button>

@@ -1,0 +1,22 @@
+<div class="app-container">
+    <h1>Sign In</h1>
+    <form (ngSubmit)="loginForm.form.valid && onSubmit()" #loginForm="ngForm">
+        <div>
+            <label for="name">User Name</label>
+            <input type="text" [(ngModel)]="userName" name="userName" id="name" required>
+             <div *ngIf="loginForm.submitted && !userName" class="red lighten-2">Required Field</div> 
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input type="password" [(ngModel)]="password" name="password" id="password" required>
+            <div *ngIf="loginForm.submitted && !password" class="red lighten-2">Required Field</div> 
+        </div>
+
+        <div *ngIf="invalidAuthentication">Invalid UserName/Password</div>
+        <br>
+        <br>
+        <button class="btn" type="submit">Submit</button>
+
+    </form>
+</div>
